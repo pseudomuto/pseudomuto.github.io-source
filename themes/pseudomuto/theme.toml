@@ -1,0 +1,12 @@
+name        = "pseudomuto"
+license     = "MIT"
+licenselink = "https://github.com/pseudomuto/pseudomuto.github.io/blob/master/LICENSE"
+description = "My very own hugo theme"
+homepage    = "https://github.com/pseudomuto/pseudomuto.github.io/tree/master/themes/pseudomuto"
+tags        = ["Roboto", "Lato", "Roboto Slab", "bootstrap", "font awesome", "minimal", "clean"]
+features    = ["blog", "pages", "minimal", "responsive", "404", "icons", "disqus", "anlaytics"]
+min_version = 0.16
+
+[author]
+name     = "David Muto"
+homepage = "https://pseudomuto.com"

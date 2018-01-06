@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <section id="list-pane" class="row list">
+    <ul >
+      {{ range .Data.Pages.ByPublishDate.Reverse }}
+      <li class="list-entry">
+        <a class="list-entry-link" href="{{ .Permalink }}">{{ .Title }}</a>
+        <p class="meta">
+          {{ if not .Date.IsZero }} Published on {{ .Date.Format .Site.Params.dateformat | upper }} {{end}}
+          <span class="category">about a {{ .ReadingTime }} minute read</span>
+        </p>
+        <p class="excerpt">
+        {{ .Summary }}
+        </p>
+        {{ if isset .Params "tags" }}
+        {{ $total := len .Params.tags }}
+        {{ $total := sub $total 1 }}
+        <p class="meta">
+          {{ range $i, $tag := sort .Params.tags }}
+          <a href="{{ "/tags/" | relURL }}{{ $tag | humanize | urlize }}" class="category">{{ $tag | upper }}</a>{{ if lt $i $total }}, {{ end }}
+          {{ end }}
+        </p>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{ partial "section_menu.html" . }}
+{{ end }}

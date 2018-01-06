@@ -1,0 +1,41 @@
+baseurl         = "https://pseudomuto.com/"
+buildDrafts     = false
+languageCode    = "en-US"
+enableRobotsTXT = true
+googleAnalytics = "UA-43533697-1"
+metaDataFormat  = "toml"
+
+title = "pseudomuto.com"
+theme = "pseudomuto"
+
+[permalinks]
+blog = "/:year/:month/:title"
+
+[params]
+author      = "David Muto"
+authorimage = "pseudomuto.jpg"
+copyright   = "Copyright &copy; 2018 pseudomuto.com. All rights reserved."
+intro       = "Full Frontal Nerdity"
+dateformat  = "Jan 2, 2006"
+description = """
+I sometimes speak at conferences, read books, make babies, and dream in code.
+
+Currently [@Shopify](https://www.shopify.com/careers)
+"""
+
+[params.social]
+github   = "pseudomuto"
+linkedin = "davidmuto"
+twitter  = "pseudomuto"
+email    = "david.muto@gmail.com"
+
+[[menu.main]]
+  name       = "blog"
+  weight     = 100
+  identifier = "blog"
+  url        = "/blog/"
+[[menu.main]]
+  name       = "books"
+  identifier = "books"
+  weight     = 200
+  url        = "https://www.goodreads.com/review/list/24864984-david-muto?sort=date_read&order=d"
