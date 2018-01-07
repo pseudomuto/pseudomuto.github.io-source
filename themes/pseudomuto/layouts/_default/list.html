@@ -16,7 +16,7 @@
         {{ $total := sub $total 1 }}
         <p class="meta">
           {{ range $i, $tag := sort .Params.tags }}
-          <a href="{{ "/tags/" | relURL }}{{ $tag | humanize | urlize }}" class="category">{{ $tag | upper }}</a>{{ if lt $i $total }}, {{ end }}
+          <a href="{{ "/tags/" | relURL }}{{ $tag | humanize | urlize }}/" class="category">{{ $tag | upper }}</a>{{ if lt $i $total }}, {{ end }}
           {{ end }}
         </p>
         {{ end }}
