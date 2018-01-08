@@ -5,8 +5,9 @@ enableRobotsTXT = true
 googleAnalytics = "UA-43533697-1"
 metaDataFormat  = "toml"
 
-title = "pseudomuto.com"
-theme = "pseudomuto"
+title           = "pseudomuto.com"
+theme           = "pseudomuto"
+disqusShortname = "pseudomuto"
 
 [permalinks]
 blog = "/:year/:month/:title"

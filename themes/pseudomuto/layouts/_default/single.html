@@ -48,5 +48,11 @@
     {{ end }}
   </section>
 
+  {{ if .Site.DisqusShortname }}
+  <article>
+    {{ template "_internal/disqus.html" . }}
+  </article>
+  {{ end }}
+
   {{ partial "section_menu.html" . }}
 {{ end }}
