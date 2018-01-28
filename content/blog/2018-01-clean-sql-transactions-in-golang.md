@@ -17,8 +17,9 @@ While this code works, there are a few of things I think could be better about i
 **Every transaction has to worry about the details**
 
 The flexibility of handling everything yourself can be nice, but its also a burden sometimes. For example, if one
-statement fails, the next move is to rollback, always. Similarly, I would be worried about forgetting to commit the
-transaction at some point (wouldn't be the first time).
+statement fails, the next move is to rollback, almost always. 
+
+Similarly, I would be worried about forgetting to commit the transaction at some point (wouldn't be the first time).
 
 **This kind of code seems like it should be a primitive in your codebase**
 
@@ -28,6 +29,8 @@ primitives in your codebase to handle these.
 For example, a function like `FetchJSON(url string, params ...interface{}) error` can be used to set open/request
 timeouts and handle any application specific errors in the same way everywhere. Then you just call this method whenever
 you need to fetch some JSON.
+
+Managing db transactions seems to fit this case well.
 
 **Not all "errors" are covered**
 
@@ -66,5 +69,9 @@ last insert id along with each call.
 
 {{< gist pseudomuto 0900a7a3605470760579752fcf0fc2b7 "main_3.go" >}}
 
-This seems much easier to read, and is certainly easy to replicate across your application. I'm definitely interested in
+This seems much easier to read, and is certainly simple to replicate across your application. Obviously, this doesn't
+cover every possible scenario, but putting something _like_ this in place can really make your application's code nicer
+to read and ensure that you're handling error cases consistently.
+
+I'm definitely interested in
 opinions, so please leave a comment if you've got one!
